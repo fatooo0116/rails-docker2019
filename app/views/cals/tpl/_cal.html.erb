@@ -1,0 +1,25 @@
+
+
+<% @cals.each do |cal| %>
+<tr>
+  <td><%= cal.id %></td>
+  <td><%= cal.cname %></td>
+  <td>
+    <%= link_to truncate(cal.cdesc), cal %>
+  </td>
+  <td>...</td>
+
+
+  <td>
+    <%= link_to  edit_cal_path(cal), id: "edit_#{cal.id}", class: ''  do%>
+      <i class="material-icons">edit</i>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to  cal_path(cal),  method: :delete, id: "delete_cal_#{cal.id}_from_index", class:'',  data: { confirm: 'Are you sure?' }  do %>
+      <i class="material-icons">delete_forever</i>
+    <% end %>
+  </td>
+
+</tr>
+<% end %>

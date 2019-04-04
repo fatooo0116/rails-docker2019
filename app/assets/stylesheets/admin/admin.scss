@@ -1,0 +1,35 @@
+.vertical-scroll{
+    width:100%;
+    overflow-x: scroll;
+}
+
+
+
+.hamburger {
+    display: inline-block;
+    left: 0px;
+    position: relative;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    width: 37px;
+    z-index: 999;
+    .line{
+      background-color: #252525;
+          display: block;
+          height: 3px;
+          margin: 4px auto;
+          width: 22px;
+          -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+    }
+}
+
+
+.content-wrap {
+  position: relative;
+  .container{
+    max-width: calc(100% - 40px);
+    position: relative;
+    padding:20px 15px 20px;
+  }
+}

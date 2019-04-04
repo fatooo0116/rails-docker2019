@@ -1,0 +1,66 @@
+<%= render 'partial/admin_menu' %>
+<div class="content-wrap ">
+    <div class="container">
+
+      <h1>My Customer # # </h1>
+
+
+<div class="calendar-container" id="calendar"></div>
+
+  <style media="screen">
+    * {
+  box-sizing: border-box;
+}
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+.calendar-container {
+  width: 600px;
+}
+.calendar {
+  border-bottom: 1px solid rgba(0, 0, 0, .5);
+  border-right: 1px solid rgba(0, 0, 0, .5);
+  width: 100%;
+}
+.day {
+  border-top: 1px solid rgba(0, 0, 0, .5);
+  border-left: 1px solid rgba(0, 0, 0, .5);
+
+  padding: 15px;
+
+  text-align: center;
+}
+.day.adj-month {
+  background-color: rgba(0, 0, 0, .1);
+  opacity: .5;
+}
+
+.calendar-item {
+  display: block;
+  height: 5px;
+
+}
+
+.calendar-control {
+  background-color: rgb(225, 225, 225);
+  border: 1px solid rgba(170, 170, 170, .7);
+  cursor: pointer;
+  display: inline-block;
+  padding: 4px 12px;
+}
+
+.calendar-control[data-calendar-control="prev"] {
+  float: left;
+}
+.calendar-control[data-calendar-control="next"] {
+  float: right;
+}
+  </style>
+
+  <script type="text/javascript">
+    ;
+  </script>
+
+    </div>
+</div>

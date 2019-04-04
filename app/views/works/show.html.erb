@@ -1,0 +1,56 @@
+
+
+
+<%= render 'partial/admin_menu' %>
+
+
+<div class="content-wrap ">
+  <div class="container">
+
+    <div class="card">
+      <div class="card-content">
+
+
+        <div class="">
+          <h2><%= @work.title %></h2>
+        </div>
+
+        <hr/>
+
+        <div class="well">
+
+
+
+
+        <div>
+          <h3>
+            <span>Content:</span>
+            <%= @work.content %>
+          </h3>
+        </div>
+
+
+        <%= image_tag @work.pimg.url, class:"preview" if @work.pimg.present? %>
+
+
+
+
+        <div class="input-form">
+        <label for=""></label>
+
+        <%=
+           ## @work.images.inspect
+        %>
+        <%#= rails_blob_path(@work.images) %>
+        </div>
+
+
+
+        </div><!-- well -->
+        <%= link_to 'Edit', edit_work_path(@work), class: 'btn btn-primary'   %>
+
+
+      </div>
+    </div><!-- end card -->
+  </div>
+</div>

@@ -1,0 +1,90 @@
+<%= form_for @cal, class: "form-horizontal" do |f| %>
+
+  <% if @cal.errors.any? %>
+    <% @cal.errors.full_messages.each do |error| %>
+      <%= js add_gritter(error, cname: "Overtime App Notification", sticky: false) %>
+    <% end %>
+  <% end %>
+
+
+
+
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <%= f.label :Name, class: "" %>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <p class="control">
+          <%= f.text_field :cname, class: "input" %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="columns">
+    <div class="column">
+
+      <div class="field">
+        <%= f.label 'Contact person', class: "" %>
+        <div class="control">
+          <%= f.text_field :ccontact, class: "input" %>
+        </div>
+      </div>
+
+    </div>
+    <div class="column">
+
+      <div class="field">
+        <%= f.label 'Tel', class: "" %>
+        <div class="control">
+          <%= f.text_field :ctel, class: "input" %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="columns">
+    <div class="column">
+
+      <div class="field">
+        <%= f.label 'Contract Start At', class: "" %>
+        <div class="control">
+          <%= f.text_field :start_at, class: "input" %>
+        </div>
+      </div>
+
+    </div>
+    <div class="column">
+
+      <div class="field">
+        <%= f.label 'Contract Expire At', class: "" %>
+        <div class="control">
+          <%= f.text_field :expire_at, class: "input" %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="column">
+      <div class="field">
+        <%= f.submit 'Save', class: 'button' %>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <%#= render partial: 'status', locals: { f: f} if current_user.type == 'AdminUser' %>
+
+
+
+
+
+<% end %>

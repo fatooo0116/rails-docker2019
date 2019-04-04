@@ -1,0 +1,28 @@
+<div  id="work"  class="content">
+  <div class="center_area clearfix">
+    <h1  class="o-container">
+      <span>
+      We create progress by<br/>
+      designing and developing<br/>
+      digital experiences</span>
+  	</h1>
+
+    <div class="o-container"  id="main">
+      <div class="article-list  clearfix"  id="block" >
+
+        <% @works.each do |work| %>
+
+          <article class="box  col-sm-4">
+            
+            <h3><%= work.title %></h3>
+            <p><%= work.content %></p>
+          </article>
+
+        <% end %>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>

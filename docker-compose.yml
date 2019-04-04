@@ -1,0 +1,23 @@
+version: '3'
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: ./nginx/DockerFile
+    depends_on:
+      - app
+    ports:
+      - 3080:3088
+  db:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+  app:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3088 -b '0.0.0.0'"
+    volumes:
+      - .:/app
+    ports:
+      - "3088:3088"
+    depends_on:
+      - db

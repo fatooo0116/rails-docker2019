@@ -1,0 +1,75 @@
+
+
+
+
+        <div  id="adminLogin" class="container ">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                  <%= f.label :email, class:"label" %>
+              </div>
+              <div class="field-body">
+                <div class="field ">
+                  <div class="control">
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                  <%= f.label :password, class:"label" %>
+              </div>
+              <div class="field-body">
+                <div class="field ">
+                  <div class="control">
+                    <%= f.password_field :password, autocomplete: "current-password", class:"input" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+              </div>
+              <div class="field-body">
+                <div class="field ">
+                  <div class="control">
+
+                    <% if devise_mapping.rememberable? -%>
+                      <div class="field">
+                        <%= f.check_box :remember_me %>
+                        <%= f.label :remember_me %>
+                      </div>
+                    <% end -%>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+              </div>
+              <div class="field-body">
+                <div class="field ">
+                  <div class="control  columns">
+                      <div class="column is-one-thirds">                        
+                        <%= f.submit "Login", class:"button is-primary" %>
+                      </div>
+                      <div class="column is-two-thirds">
+                        <%#= render "devise/shared/links" %>
+                        <%= link_to "Sign up", new_registration_path(resource_name) %> | <%= link_to "Forgot your password?", new_password_path(resource_name) %>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <% end %>
+        </div><!-- #container -->

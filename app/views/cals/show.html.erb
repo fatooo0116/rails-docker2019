@@ -1,0 +1,53 @@
+
+
+
+<%= render 'partial/admin_menu' %>
+
+
+<div class="content-wrap ">
+  <div class="container">
+
+    <div class="card">
+      <div class="card-content">
+
+
+        <div class="">
+          <h2><%= @cal.cname %></h2>
+        </div>
+
+        <hr/>
+
+        <div class="well">
+
+
+
+
+        <div>
+          <h3>
+            <span>Content:</span>
+            <%= @cal.cdesc %>
+          </h3>
+        </div>
+
+
+
+
+        <div class="input-form">
+        <label for=""></label>
+
+        <%=
+           ## @cal.images.inspect
+        %>
+        <%#= rails_blob_path(@cal.images) %>
+        </div>
+
+
+
+        </div><!-- well -->
+        <%= link_to 'Edit', edit_cal_path(@cal), class: 'btn btn-primary'   %>
+
+
+      </div>
+    </div><!-- end card -->
+  </div>
+</div>

@@ -1,0 +1,28 @@
+.footer_wrapper{
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  margin-top:500px;
+  background-color: #0d0d0d;
+  .fa1{
+    min-height:300px;
+    width:100%;
+  }
+  .fa2{
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-image: url('robotics-home-footerbg.png');
+    padding: 120px 0 80px;
+    color:#fff;
+
+    .inner{
+      max-width: 1024px;
+      margin: auto;
+      padding-left: 50px;
+      padding-right:50px;
+      h4{
+        margin-top:0;
+      }
+    }
+  }
+}
