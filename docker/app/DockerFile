@@ -1,6 +1,7 @@
 FROM ruby:2.4.5
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client  
 
+
 # yarnパッケージ管理ツールインストール
 RUN apt-get update && apt-get install -y curl apt-transport-https wget && \
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
@@ -12,28 +13,25 @@ RUN curl -sL https://deb.nodesource.com/setup_9.x | bash - && \
     apt-get install nodejs    
 
 
+# Set an environment variable where the Rails app is installed to inside of Docker image:
+ENV RAILS_ROOT /var/www/app_name
+RUN mkdir -p $RAILS_ROOT
 
+# Set working directory, where the commands will be ran:
+WORKDIR $RAILS_ROOT
 
-RUN mkdir /app
-WORKDIR /app
-COPY Gemfile /app/Gemfile
-COPY Gemfile.lock /app/Gemfile.lock
+# Setting env up
+## ENV RAILS_ENV='production'
+## ENV RACK_ENV='production'
 
+# Adding gems
+COPY Gemfile Gemfile
+COPY Gemfile.lock Gemfile.lock
+RUN bundle install 
 
+# Adding project files
+## COPY . .
+## RUN bundle exec rake assets:precompile
 
-RUN bundle install
-
-
-
-
-COPY . /app
-
-# Add a script to be executed every time the container starts.
-## COPY entrypoint.sh /usr/bin/
-## RUN chmod +x /usr/bin/entrypoint.sh
-## ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
-
-# Start the main process.
-## CMD ["rails", "server", "-b", "0.0.0.0"]
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]

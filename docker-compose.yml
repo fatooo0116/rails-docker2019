@@ -1,4 +1,8 @@
 version: '3'
+
+volumes:
+  postgres_data: {}
+
 services:
   nginx:
     build:
@@ -13,8 +17,8 @@ services:
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
   app:
-    build:   
+    build:
       context: .
-      dockerfile: ./DockerFile    
+      dockerfile: ./docker/app/DockerFile
     depends_on:
       - db
