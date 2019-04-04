@@ -7,7 +7,7 @@ services:
     depends_on:
       - app
     ports:
-      - 80:3088
+      - 3088:80
   db:
     image: postgres
     volumes:
