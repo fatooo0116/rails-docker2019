@@ -84,4 +84,7 @@ Rails.application.configure do
  }
 
  config.allowed_cors_origins = ["http://127.0.0.1:3000","http://127.0.0.1:3001"]
+
+ config.webpacker.check_yarn_integrity = false
+
 end
